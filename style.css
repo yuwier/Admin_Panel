@@ -88,17 +88,18 @@
     }
 
     .profile__menu {
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background: var(--white);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 0px;
-      padding: 10px;
-      display: none;
-    }
+	  position: absolute;
+	  top: 50px;
+	  right: 0;
+	  background: var(--white);
+	  border: 1px solid var(--accent);
+	  border-radius: 8px;
+	  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	  min-width: 150px;  /* фикс вместо 0px */
+	  padding: 10px;
+	  display: none;
+	  z-index: 10;  /* чтобы меню не пряталось */
+	}
 
     .profile__menu--visible {
       display: block;
@@ -207,3 +208,4 @@
         right: 10px;
       }
 	}
+
