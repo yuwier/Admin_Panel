@@ -3,7 +3,7 @@
       --secondary: #3d3d3d;
       --background: #fcfcfc;
       --accent: #ffffff;
-      --success: #93da86;
+	  --success: #93da86;
       --danger: #f07167;
       --text: #333;
       --white: #ffffff;
@@ -87,18 +87,18 @@
       cursor: pointer;
     }
 
-    .profile__menu {
-	  position: absolute;
-	  top: 50px;
-	  right: 0;
-	  background: var(--white);
-	  border: 1px solid var(--accent);
-	  border-radius: 8px;
-	  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	  min-width: 150px;  /* фикс вместо 0px */
-	  padding: 10px;
-	  display: none;
-	  z-index: 10;  /* чтобы меню не пряталось */
+	.profile__menu {
+		position: absolute;
+		top: 50px;
+		right: 0;
+		background: var(--white);
+		border: 1px solid var(--accent);
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		min-width: 150px;  /* фикс вместо 0px */
+		padding: 10px;
+		display: none;
+		z-index: 10;  /* чтобы меню не пряталось */
 	}
 
     .profile__menu--visible {
@@ -160,7 +160,7 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-size: 14px;
+      font-size: 10px;
     }
 
     .user-table th, .user-table td {
@@ -175,6 +175,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 10px;
     }
 
     .btn-delete {
@@ -208,4 +209,3 @@
         right: 10px;
       }
 	}
-
