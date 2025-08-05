@@ -3,7 +3,7 @@
       --secondary: #3d3d3d;
       --background: #fcfcfc;
       --accent: #ffffff;
-	  --success: #93da86;
+      --success: #93da86;
       --danger: #f07167;
       --text: #333;
       --white: #ffffff;
@@ -23,10 +23,10 @@
       color: var(--text);
     }
 
-	.icons {
-		width: 20px;
-		height: 20px;
-	}
+    .icons {
+      width: 20px;
+      height: 20px;
+    }
 
     .sidebar {
       width: 60px;
@@ -36,6 +36,7 @@
       padding: 10px;
       transition: width 0.3s ease;
       position: relative;
+      font-size: 20px;
     }
 
     .sidebar--expanded {
@@ -48,6 +49,7 @@
       color: var(--white);
       cursor: pointer;
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
     }
 
     .sidebar__menu {
@@ -63,6 +65,11 @@
 
     .sidebar--expanded .sidebar__item {
       display: block;
+    }
+
+    .sidebar--expanded .sidebar__toggle {
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
     }
 
     .main {
@@ -87,19 +94,21 @@
       cursor: pointer;
     }
 
-	.profile__menu {
-		position: absolute;
-		top: 50px;
-		right: 0;
-		background: var(--white);
-		border: 1px solid var(--accent);
-		border-radius: 8px;
-		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-		min-width: 150px;  /* фикс вместо 0px */
-		padding: 10px;
-		display: none;
-		z-index: 10;  /* чтобы меню не пряталось */
-	}
+    .profile__menu {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: var(--white);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 150px;
+      /* фикс вместо 0px */
+      padding: 10px;
+      display: none;
+      z-index: 10;
+      /* чтобы меню не пряталось */
+    }
 
     .profile__menu--visible {
       display: block;
@@ -130,13 +139,15 @@
     .search-filter input[type="text"] {
       width: 250px;
       padding: 10px 15px;
-      border: 1px solid var(--accent);
+      border: 1px solid var(--white);
       border-radius: 25px;
       font-size: 14px;
       outline: none;
       background: var(--white);
       box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     }
+
+
 
     .search-filter button {
       padding: 10px 20px;
@@ -159,11 +170,12 @@
       background: var(--white);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-size: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 13px;
     }
 
-    .user-table th, .user-table td {
+    .user-table th,
+    .user-table td {
       padding: 10px;
       border: 1px solid #ddd;
       text-align: left;
@@ -175,7 +187,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 10px;
+      font-size: 13px;
     }
 
     .btn-delete {
@@ -193,19 +205,143 @@
       color: var(--white);
     }
 
-	@media (max-width: 768px) {
+    @media (max-width: 768px) {
+
       .user-table th:not(:first-child):not(:last-child),
-	  .user-table td:not(:first-child):not(:last-child) {
-		display: none;
-	  }
+      .user-table td:not(:first-child):not(:last-child) {
+        display: none;
+      }
+
+      .user-table {
+        font-size: 15px;
+        margin: 0px;
+      }
+
+      .user-table__actions button {
+        font-size: 15px;
+      }
 
       .search-filter {
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .profile__username {
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 190px;
+        height: 60px;
+      }
+
+      .profile__menu {
+        padding: 50px;
+      }
+
+      .profile__logout {
+        padding: 5px 10px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: 60px;
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 0px;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        padding: 0 10px;
+        background: var(--primary);
+      }
+
+      .icons {
+        width: 30px;
+        height: 30px;
+      }
+
+      .sidebar .icons {
+        margin-right: 13px;
+      }
+
+      .profile__button {
+        width: 50px;
+        height: 50px;
+      }
+
+      .sidebar__toggle {
+        margin: 0;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        z-index: 40;
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar__menu {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 60px;
+        gap: 20px;
+        z-index: 30;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar--expanded .sidebar__menu {
+        display: flex;
+        transform: translateY(0);
+        top: 0;
+      }
+
+      .sidebar--expanded .sidebar__toggle {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar__item {
+        display: block;
+        color: var(--white);
+        font-size: 20px;
+      }
+
+
+      .main {
+        padding: 10px;
+        margin-bottom: 60px;
+      }
+
       .profile {
         position: fixed;
         top: 10px;
         right: 10px;
+        z-index: 10;
       }
-	}
+
+      .search-filter input[type="text"] {
+        font-size: 18px;
+      }
+
+      .search-filter button {
+        font-size: 18px;
+      }
