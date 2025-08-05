@@ -79,7 +79,7 @@
 
     .sidebar--expanded {
       width: 200px;
-      transition: width 0.3s ease;
+      transition: transform 0.3s ease, width 0.3s ease;
     }
 
     .sidebar__toggle {
@@ -416,3 +416,4 @@
       .search-filter button {
         font-size: 13px;
       }
+
