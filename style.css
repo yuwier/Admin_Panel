@@ -109,7 +109,6 @@
     }
 
     .sidebar__item:hover {
-      background-color: #ffffff0f;
       transform: scale(1.03);
       transition: transform 0.3s ease;
     }
@@ -402,10 +401,6 @@
         border-bottom: 0.1px solid #ffffff20;
         padding: 0px 5px 20px 20px;
         width: 100%;
-      }
-
-      .sidebar__item:hover {
-        background-color: #ffffff00;
       }
 
       .sidebar:hover {
